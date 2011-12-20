@@ -1,11 +1,3 @@
 require "capistrano-strategy-copy-partial/version"
+require "capistrano/recipes/deploy/strategy/copy_partial"
 
-module Capistrano
-  module Strategy
-    module Copy
-      module Partial
-        # Your code goes here...
-      end
-    end
-  end
-end
