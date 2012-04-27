@@ -15,3 +15,9 @@ Use next options:
     set :deploy_via,   :copy_partial
     set :copy_partial, "path/for/deploy"
     set :copy_strategy, :export
+
+## Licence
+
+capistrano-strategy-copy-partial is released under the MIT licence:
+
+* http://www.opensource.org/licenses/MIT
