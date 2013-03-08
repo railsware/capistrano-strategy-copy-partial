@@ -41,6 +41,11 @@ class Capistrano::Deploy::Strategy::CopyPartial < Capistrano::Deploy::Strategy::
       logger.debug "getting (via #{copy_strategy}) revision #{revision} to #{destination}"
       system(command)
 
+      if exists?(:build_dir) && exists?(:build_script)
+        logger.debug "running build_script '#{build_script}' in directory #{destination}/#{build_dir}"
+        system("cd #{destination}/#{build_dir} && #{build_script}")
+      end
+
       if copy_exclude.any?
         logger.debug "processing exclusions..."
         if copy_exclude.any?
